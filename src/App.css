@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .app-container {
+    min-height: 100vh;
+    background: #000;
+    color: white;
+  }
+  
+  /* Login/Homepage */
+  .login-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #6C63FF, #FF6584);
+  }
+  
+  .login-button {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Monthly Wrapped View */
+  .monthly-wrap-container {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: linear-gradient(45deg, #6C63FF, #FF6584);
+    position: relative;
+  }
+  
+  .site-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .time-frame-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .track-info .play-count {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    color: white;
+  }
+
+  .monthly-stats {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .top-section {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .top-artists, .top-songs {
+    flex: 1;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+  }
+  
+  .number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+    min-width: 30px;
+    opacity: 0.9;
+  }
+  
+  .song-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .name {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .stats-button {
+    display: block;
+    margin: 40px auto 0;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .stats-button:hover {
+    transform: scale(1.05);
+    background: white;
+  }
+  
+  /* Stats View */
+  .stats-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(45deg, #a8c0ff, #3f2b96);
+  position: relative;
+}
+.back-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .time-range-buttons {
+    margin: 30px 0;
+  }
+
+  .back-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .time-range-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .range-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .range-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .range-button.active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .stats-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+  }
+  
+  .tracks-list, .artists-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .track-item, .artist-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .track-item:hover, .artist-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .track-number, .artist-number {
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+  }
+  
+  .track-image, .artist-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 0 15px;
+    object-fit: cover;
+  }
+  
+  .artist-image {
+    border-radius: 50%;
+  }
+  
+  .track-info, .artist-info {
+    flex-grow: 1;
+  }
+  
+  .track-name, .artist-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .track-artist, .artist-genres {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .list-item:nth-child(1) { animation-delay: 0.1s; }
+  .list-item:nth-child(2) { animation-delay: 0.2s; }
+  .list-item:nth-child(3) { animation-delay: 0.3s; }
+  .list-item:nth-child(4) { animation-delay: 0.4s; }
+  .list-item:nth-child(5) { animation-delay: 0.5s; }
+  
+  /* Loading and Error States */
+  .loading, .error {
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .top-section {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .monthly-stats {
+      padding: 20px;
+    }
+  
+    .time-range-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .site-logo {
+      font-size: 24px;
+    }
+  
+    .login-button {
+      font-size: 20px;
+      padding: 15px 30px;
+    }
+  }
