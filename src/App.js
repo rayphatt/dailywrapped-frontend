@@ -47,10 +47,10 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      const [tracksResponse, artistsResponse] = await Promise.all([
-        fetch(`https://dailywrapped-backend.onrender.com/api/top-tracks?access_token=${accessToken}&time_range=short_term`),
-        fetch(`https://dailywrapped-backend.onrender.com/api/top-artists?access_token=${accessToken}&time_range=short_term`)
-      ]);
+        const [tracksResponse, artistsResponse] = await Promise.all([
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/api/top-tracks?access_token=${accessToken}&time_range=short_term`),
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/api/top-artists?access_token=${accessToken}&time_range=short_term`)
+          ]);
 
       if (!tracksResponse.ok || !artistsResponse.ok) {
         throw new Error('Failed to fetch data');
@@ -73,8 +73,8 @@ function App() {
     setError(null);
     try {
         const [tracksResponse, artistsResponse] = await Promise.all([
-            fetch(`https://dailywrapped-backend.onrender.com/api/top-tracks?access_token=${accessToken}&time_range=${timeRange}`),
-            fetch(`https://dailywrapped-backend.onrender.com/api/top-artists?access_token=${accessToken}&time_range=${timeRange}`)
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/api/top-tracks?access_token=${accessToken}&time_range=${timeRange}`),
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/api/top-artists?access_token=${accessToken}&time_range=${timeRange}`)
           ]);
 
       if (!tracksResponse.ok || !artistsResponse.ok) {
@@ -106,7 +106,8 @@ function App() {
   }, [accessToken, currentView, timeRange]);
 
   const handleLogin = () => {
-    window.location.href = `https://dailywrapped-backend.onrender.com/login`;
+    console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
+    window.location.href = `${process.env.REACT_APP_BACKEND_URL}/login`;
   };
 
   if (!isLoggedIn) {
